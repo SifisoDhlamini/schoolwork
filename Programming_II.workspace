@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="Programming_II" Database="" Version="10000">
+  <Project Name="week1_question1" Path="Question_1/Question_1.project" Active="No"/>
+  <Project Name="week1_question2" Path="Question_2/Question_2.project" Active="No"/>
+  <Project Name="week1_question3" Path="Question_3/Question_3.project" Active="No"/>
+  <Project Name="week1_question4" Path="week1_question4/week1_question4.project" Active="No"/>
+  <Project Name="week1_question5" Path="week1_question5/week1_question5.project" Active="No"/>
+  <Project Name="week1_question6" Path="week1_question6/week1_question6.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="week1_question1" ConfigName="Debug"/>
+      <Project Name="week1_question2" ConfigName="Debug"/>
+      <Project Name="week1_question3" ConfigName="Debug"/>
+      <Project Name="week1_question4" ConfigName="Debug"/>
+      <Project Name="week1_question5" ConfigName="Debug"/>
+      <Project Name="week1_question6" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="week1_question1" ConfigName="Release"/>
+      <Project Name="week1_question2" ConfigName="Release"/>
+      <Project Name="week1_question3" ConfigName="Release"/>
+      <Project Name="week1_question4" ConfigName="Release"/>
+      <Project Name="week1_question5" ConfigName="Release"/>
+      <Project Name="week1_question6" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
