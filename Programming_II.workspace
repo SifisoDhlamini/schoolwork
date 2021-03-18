@@ -1,29 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="Programming_II" Database="" Version="10000">
-  <Project Name="week1_question1" Path="Question_1/Question_1.project" Active="No"/>
-  <Project Name="week1_question2" Path="Question_2/Question_2.project" Active="No"/>
-  <Project Name="week1_question3" Path="Question_3/Question_3.project" Active="No"/>
-  <Project Name="week1_question4" Path="week1_question4/week1_question4.project" Active="No"/>
-  <Project Name="week1_question5" Path="week1_question5/week1_question5.project" Active="No"/>
-  <Project Name="week1_question6" Path="week1_question6/week1_question6.project" Active="Yes"/>
+  <Project Name="question1" Path="Question_1/Question_1.project" Active="No"/>
+  <Project Name="question2" Path="Question_2/Question_2.project" Active="No"/>
+  <Project Name="question3" Path="Question_3/Question_3.project" Active="No"/>
+  <Project Name="question4" Path="week1_question4/week1_question4.project" Active="No"/>
+  <Project Name="question5" Path="week1_question5/week1_question5.project" Active="No"/>
+  <Project Name="question6" Path="week1_question6/week1_question6.project" Active="No"/>
+  <Project Name="question7" Path="week1_question7/week1_question7.project" Active="No"/>
+  <Project Name="question8" Path="question8/question8.project" Active="No"/>
+  <Project Name="question9" Path="question9/question9.project" Active="No"/>
+  <Project Name="question10" Path="question10/question10.project" Active="No"/>
+  <Project Name="Question11" Path="Question11/Question11.project" Active="No"/>
+  <Project Name="question8b" Path="question8b/question8b.project" Active="No"/>
+  <Project Name="question9b" Path="question9b/question9b.project" Active="No"/>
+  <Project Name="question10b" Path="question10b/question10b.project" Active="No"/>
+  <Project Name="rectangle" Path="rectangle/rectangle.project" Active="No"/>
+  <Project Name="question11b" Path="question11b/question11b.project" Active="No"/>
+  <Project Name="question12" Path="question12/question12.project" Active="No"/>
+  <Project Name="question13" Path="question13/question13.project" Active="No"/>
+  <Project Name="question14" Path="question14/question14.project" Active="No"/>
+  <Project Name="question15" Path="question15/question15.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
-      <Project Name="week1_question1" ConfigName="Debug"/>
-      <Project Name="week1_question2" ConfigName="Debug"/>
-      <Project Name="week1_question3" ConfigName="Debug"/>
-      <Project Name="week1_question4" ConfigName="Debug"/>
-      <Project Name="week1_question5" ConfigName="Debug"/>
-      <Project Name="week1_question6" ConfigName="Debug"/>
+      <Project Name="question1" ConfigName="Debug"/>
+      <Project Name="question2" ConfigName="Debug"/>
+      <Project Name="question3" ConfigName="Debug"/>
+      <Project Name="question4" ConfigName="Debug"/>
+      <Project Name="question5" ConfigName="Debug"/>
+      <Project Name="question6" ConfigName="Debug"/>
+      <Project Name="question7" ConfigName="Debug"/>
+      <Project Name="question8" ConfigName="Debug"/>
+      <Project Name="question9" ConfigName="Debug"/>
+      <Project Name="question10" ConfigName="Debug"/>
+      <Project Name="Question11" ConfigName="Debug"/>
+      <Project Name="question8b" ConfigName="Debug"/>
+      <Project Name="question9b" ConfigName="Debug"/>
+      <Project Name="question10b" ConfigName="Debug"/>
+      <Project Name="rectangle" ConfigName="Debug"/>
+      <Project Name="question11b" ConfigName="Debug"/>
+      <Project Name="question12" ConfigName="Debug"/>
+      <Project Name="question13" ConfigName="Debug"/>
+      <Project Name="question14" ConfigName="Debug"/>
+      <Project Name="question15" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
-      <Project Name="week1_question1" ConfigName="Release"/>
-      <Project Name="week1_question2" ConfigName="Release"/>
-      <Project Name="week1_question3" ConfigName="Release"/>
-      <Project Name="week1_question4" ConfigName="Release"/>
-      <Project Name="week1_question5" ConfigName="Release"/>
-      <Project Name="week1_question6" ConfigName="Release"/>
+      <Project Name="question1" ConfigName="Release"/>
+      <Project Name="question2" ConfigName="Release"/>
+      <Project Name="question3" ConfigName="Release"/>
+      <Project Name="question4" ConfigName="Release"/>
+      <Project Name="question5" ConfigName="Release"/>
+      <Project Name="question6" ConfigName="Release"/>
+      <Project Name="question7" ConfigName="Release"/>
+      <Project Name="question8" ConfigName="Release"/>
+      <Project Name="question9" ConfigName="Release"/>
+      <Project Name="question10" ConfigName="Release"/>
+      <Project Name="Question11" ConfigName="Release"/>
+      <Project Name="question8b" ConfigName="Release"/>
+      <Project Name="question9b" ConfigName="Release"/>
+      <Project Name="question10b" ConfigName="Release"/>
+      <Project Name="rectangle" ConfigName="Release"/>
+      <Project Name="question11b" ConfigName="Release"/>
+      <Project Name="question12" ConfigName="Release"/>
+      <Project Name="question13" ConfigName="Release"/>
+      <Project Name="question14" ConfigName="Release"/>
+      <Project Name="question15" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
