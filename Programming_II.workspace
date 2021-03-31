@@ -19,7 +19,14 @@
   <Project Name="question12" Path="question12/question12.project" Active="No"/>
   <Project Name="question13" Path="question13/question13.project" Active="No"/>
   <Project Name="question14" Path="question14/question14.project" Active="No"/>
-  <Project Name="question15" Path="question15/question15.project" Active="Yes"/>
+  <Project Name="question15" Path="question15/question15.project" Active="No"/>
+  <Project Name="question16" Path="question16/question16.project" Active="No"/>
+  <Project Name="q16_solution1" Path="q16_solution1/q16_solution1.project" Active="No"/>
+  <Project Name="Quiz1" Path="Quiz1/Quiz1.project" Active="No"/>
+  <Project Name="playground" Path="playground/playground.project" Active="No"/>
+  <Project Name="question17" Path="question17/question17.project" Active="No"/>
+  <Project Name="question18" Path="question18/question18.project" Active="No"/>
+  <Project Name="question19" Path="question19/question19.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -43,6 +50,13 @@
       <Project Name="question13" ConfigName="Debug"/>
       <Project Name="question14" ConfigName="Debug"/>
       <Project Name="question15" ConfigName="Debug"/>
+      <Project Name="question16" ConfigName="Debug"/>
+      <Project Name="q16_solution1" ConfigName="Debug"/>
+      <Project Name="Quiz1" ConfigName="Debug"/>
+      <Project Name="playground" ConfigName="Debug"/>
+      <Project Name="question17" ConfigName="Debug"/>
+      <Project Name="question18" ConfigName="Debug"/>
+      <Project Name="question19" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -66,6 +80,13 @@
       <Project Name="question13" ConfigName="Release"/>
       <Project Name="question14" ConfigName="Release"/>
       <Project Name="question15" ConfigName="Release"/>
+      <Project Name="question16" ConfigName="Release"/>
+      <Project Name="q16_solution1" ConfigName="Release"/>
+      <Project Name="Quiz1" ConfigName="Release"/>
+      <Project Name="playground" ConfigName="Release"/>
+      <Project Name="question17" ConfigName="Release"/>
+      <Project Name="question18" ConfigName="Release"/>
+      <Project Name="question19" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
