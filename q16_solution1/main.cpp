@@ -123,10 +123,10 @@ private:
 
 int main(int argc, char **argv)
 {
-	Point coordinateA = {6, -1};
-    Point coordinateB = {2, 7};
-    Point coordinateC = {2, 1};
-    Point coordinateD = {4,-1};
+	Point coordinateA = {10, 0};
+    Point coordinateB = {0, 10};
+    Point coordinateC = {10, 0};
+    Point coordinateD = {0,10};
     Segment seg(coordinateA, coordinateB);
     Segment seg2(coordinateC, coordinateD);
     Point *inter;

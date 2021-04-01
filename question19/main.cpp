@@ -89,15 +89,29 @@ public:
             cout<<number[i].getDigit();
         }
         cout<<endl;        
-    }    
+    } 
+
+    IntNumber *add(const IntNumber *n) const;
     
 };
 
+IntNumber *IntNumber::add(const IntNumber *n) const{
+    
+    return nullptr;
+}
+
 int main()
 {
-    char num[10000];
-    cin>>num;
-    IntNumber *number = new IntNumber(num);
-    number -> display();
-    return 0;
+  char num1[10000], num2[10000];
+  cin>>num1>>num2;
+  IntNumber *number1 = new IntNumber(num1);
+  IntNumber *number2 = new IntNumber(num2);
+  number1->display();
+  cout<<endl;
+  number2->display();
+  cout<<endl;
+  number1->add(number2)->display();
+  cout<<endl;
+  number2->add(number1)->display();
+  return 0;
 }

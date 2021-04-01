@@ -57,64 +57,76 @@ Segment(): Segment(point1, point2){
         return point1.getDistance(point2);
     }
     
+    
     Point *getIntersect(Segment s){ 
-        static Point intersect;
-        if(s.findSlope() == this -> findSlope()){
-            return NULL;
-        } else {
-            float a1 = point1.getX();
-            float b1 = point1.getY();
-            float c1 = point1.getY() - (this -> findSlope() * point1.getX());
-            float a2 = s.point1.getX();
-            float b2 = s.point1.getY();
-            float c2 = s.point1.getY() - (s.findSlope() * s.point1.getX()); 
-            
-            
-            //b = y - mx
-            intersect.setX((b1*c2 - b2*c1) / (a1*b2 - a2*b1));
-            intersect.setY((a2*c1 - a1*c2) / (a1*b2 - a2*b1));            
-            
-            if (inRange(intersect)){ return &intersect; }            
+        //find values of Ax + By = C (both segments) to get intersection and detrmine if it is within range of both segments
+        static Point intercect;
+        float A1 = s.point2.getY() - s.point1.getY();
+        float B1 = s.point1.getX() - s.point2.getX();
+        float C1 = A1 * s.point1.getX() + B1 * s.point1.getY();
+         
+        float A2 = this->point2.getY() - this->point1.getY();
+        float B2 = this->point1.getX() - this->point2.getX();
+        float C2 = A2 * this->point1.getX() + B2 * this->point1.getY(); 
+        
+        float denominator = A1 * B2 - A2 * B1;
+        
+        //if it is the same line or share a point on the same axis
+        if(denominator == 0){ 
+            if(s.point1.getX() == this->point1.getX() && s.point1.getY() == this->point1.getY()){
+                intercect.setX(s.point1.getX());
+                intercect.setY(s.point1.getY());
+                return &intercect;
+            }
+            if(s.point1.getX() == this->point2.getX() && s.point1.getY() == this->point2.getY()){
+                intercect.setX(s.point1.getX());
+                intercect.setY(s.point1.getY());
+                return &intercect;
+            }
+            if(s.point2.getX() == this->point1.getX() && s.point2.getY() == this->point1.getY()){
+                intercect.setX(s.point2.getX());
+                intercect.setY(s.point2.getY());
+                return &intercect;
+            }
+            if(s.point2.getX() == this->point2.getX() && s.point2.getY() == this->point2.getY()){
+                intercect.setX(s.point2.getX());
+                intercect.setY(s.point2.getY());
+                return &intercect;
+            }
+
+            return NULL;        
+        } 
+        
+        intercect.setX((B2 * C1 - B1 * C2)/denominator);
+        intercect.setY((A1 * C2 - A2 * C1)/denominator);
+        
+        if(intercect.getX() == -0){
+            intercect.setX(0);
+        }
+        if(intercect.getY() == -0){
+            intercect.setY(0);
         }
         
-        return NULL;
-    }
-    
-    float findSlope();
-    bool inRange(Point p);
-    
+        //check boundary ratio  or range      
+        float ratioX1 = (intercect.getX() - s.point1.getX()) / (s.point2.getX() - s.point1.getX());
+        float ratioY1 = (intercect.getY() - s.point1.getY()) / (s.point2.getY() - s.point1.getY());
+        float ratioX2 = (intercect.getX() - this->point1.getX()) / (this->point2.getX() - this->point1.getX());
+        float ratioY2 = (intercect.getY() - this->point1.getY()) / (this->point2.getY() - this->point1.getY());
+        
+        if(((ratioX1 >= 0 && ratioX1 <= 1) || (ratioY1 >= 0 && ratioY1 <= 1)) && ((ratioX2 >= 0 && ratioX2 <= 1) || (ratioY2 >= 0 && ratioY2 <= 1))){
+            return &intercect;
+        }
+        
+        return NULL;          
+    }   
 };
-
-float Segment::findSlope(){
-    return ((point2.getY() - point1.getY()) / (point2.getX() - point1.getX()));
-}
-
-bool Segment::inRange(Point p){
-    
-    Point max;
-    Point min;
-    
-    if(point1.getY() >= point2.getY()){
-        max = point1;
-        min = point2;
-    } else {
-        max = point2;
-        min = point1;
-    }
-    
-    if((p.getX() > min.getX() && p.getX() < max.getX()) && (p.getY() > min.getY() && p.getY() < max.getY())){
-        return true;
-    }
-    
-    return false;
-}
 
 
 int main(int argc, char **argv)
 {
-	Point coordinateA = {6, -1};
+	Point coordinateA = {10, 0};
     coordinateA.printPoint();
-    Point coordinateB = {2, 7};
+    Point coordinateB = {0, 10};
     coordinateB.printPoint();
     cout<<endl;
     cout<<"X: "<<coordinateA.getX()<<endl;
@@ -129,9 +141,9 @@ int main(int argc, char **argv)
     cout<<"The length of the Segment: "<<seg.getLength()<<endl;
     cout<<"Slope: "<<seg.findSlope()<<endl;
     
-    Point coordinateC = {2, 1};
+    Point coordinateC = {0, 0}; //0,0
     coordinateC.printPoint();
-    Point coordinateD = {4,-1};
+    Point coordinateD = {0,10};//10,10
     coordinateD.printPoint();
     cout<<endl;
     cout<<"X: "<<coordinateC.getX()<<endl;
