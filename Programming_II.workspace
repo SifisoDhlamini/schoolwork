@@ -26,8 +26,10 @@
   <Project Name="playground" Path="playground/playground.project" Active="No"/>
   <Project Name="question17" Path="question17/question17.project" Active="No"/>
   <Project Name="question18" Path="question18/question18.project" Active="No"/>
-  <Project Name="question19" Path="question19/question19.project" Active="Yes"/>
+  <Project Name="question19" Path="question19/question19.project" Active="No"/>
   <Project Name="operatorOverloadingExample" Path="operatorOverloadingExample/operatorOverloadingExample.project" Active="No"/>
+  <Project Name="question20" Path="question20/question20.project" Active="No"/>
+  <Project Name="question21" Path="question21/question21.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -59,6 +61,8 @@
       <Project Name="question18" ConfigName="Debug"/>
       <Project Name="question19" ConfigName="Debug"/>
       <Project Name="operatorOverloadingExample" ConfigName="Debug"/>
+      <Project Name="question20" ConfigName="Debug"/>
+      <Project Name="question21" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -90,6 +94,8 @@
       <Project Name="question18" ConfigName="Release"/>
       <Project Name="question19" ConfigName="Release"/>
       <Project Name="operatorOverloadingExample" ConfigName="Release"/>
+      <Project Name="question20" ConfigName="Release"/>
+      <Project Name="question21" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
