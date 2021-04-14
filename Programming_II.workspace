@@ -29,7 +29,16 @@
   <Project Name="question19" Path="question19/question19.project" Active="No"/>
   <Project Name="operatorOverloadingExample" Path="operatorOverloadingExample/operatorOverloadingExample.project" Active="No"/>
   <Project Name="question20" Path="question20/question20.project" Active="No"/>
-  <Project Name="question21" Path="question21/question21.project" Active="Yes"/>
+  <Project Name="question21" Path="question21/question21.project" Active="No"/>
+  <Project Name="question22" Path="question22/question22.project" Active="No"/>
+  <Project Name="question23" Path="question23/question23.project" Active="No"/>
+  <Project Name="question24" Path="question24/question24.project" Active="No"/>
+  <Project Name="question25" Path="question25/question25.project" Active="No"/>
+  <Project Name="question26" Path="question26/question26.project" Active="No"/>
+  <Project Name="question27" Path="question27I/question27I.project" Active="No"/>
+  <Project Name="question28" Path="question28/question28.project" Active="No"/>
+  <Project Name="Justin28" Path="Justin28/Justin28.project" Active="No"/>
+  <Project Name="question29" Path="question29/question29.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -63,6 +72,15 @@
       <Project Name="operatorOverloadingExample" ConfigName="Debug"/>
       <Project Name="question20" ConfigName="Debug"/>
       <Project Name="question21" ConfigName="Debug"/>
+      <Project Name="question22" ConfigName="Debug"/>
+      <Project Name="question23" ConfigName="Debug"/>
+      <Project Name="question24" ConfigName="Debug"/>
+      <Project Name="question25" ConfigName="Debug"/>
+      <Project Name="question26" ConfigName="Debug"/>
+      <Project Name="question27" ConfigName="Debug"/>
+      <Project Name="question28" ConfigName="Debug"/>
+      <Project Name="Justin28" ConfigName="Debug"/>
+      <Project Name="question29" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -96,6 +114,15 @@
       <Project Name="operatorOverloadingExample" ConfigName="Release"/>
       <Project Name="question20" ConfigName="Release"/>
       <Project Name="question21" ConfigName="Release"/>
+      <Project Name="question22" ConfigName="Release"/>
+      <Project Name="question23" ConfigName="Release"/>
+      <Project Name="question24" ConfigName="Release"/>
+      <Project Name="question25" ConfigName="Release"/>
+      <Project Name="question26" ConfigName="Release"/>
+      <Project Name="question27" ConfigName="Release"/>
+      <Project Name="question28" ConfigName="Release"/>
+      <Project Name="Justin28" ConfigName="Release"/>
+      <Project Name="question29" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

@@ -37,7 +37,7 @@ int main() {
             }
             cout<<endl;
         }
-        cout<<endl;
+        //cout<<endl;
         --t;
     }
     return 0;
