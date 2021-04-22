@@ -1,33 +1,27 @@
-#include <iostream>
-#include <iomanip>
-#include <string>
+#include<iostream>
 using namespace std;
 
 class Encode
 {
-private:
-    string decoded;
+    string toEncode;
 public:
-    Encode(string s){
-        decoded = s;
-    }
-    
+    Encode(string s): toEncode{s} {}
+
     string encode(){
-        string e = "";
-        
-        for(size_t i = 0; i < decoded.length(); i++){
-            if(int(decoded[i]) < 10){
-                e = e + "00" + to_string(int(decoded[i]));
-            } else if(int(decoded[i]) < 100){
-                e = e + "0" + to_string(int(decoded[i]));
+        string temp = "00";
+        string temp1 ="0";
+        string encoded;
+        for(auto c: toEncode){
+            if(int(c) < 10){
+               encoded+= temp + to_string(int(c));
+            } else if(int(c) < 100) {
+                encoded+= temp1 +  to_string(int(c));
             } else {
-                e = e + to_string(int(decoded[i]));
+              encoded+=to_string(int(c));
             }
         }
-        return e;        
+        return encoded;
     }
-    
-    
 };
 int main() {
   string str;

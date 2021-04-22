@@ -1,46 +1,27 @@
-#include <iostream>
+#include<iostream>
+
 using namespace std;
 
-class bar3d
-{
-    public:
-        float width;
-        float height;
-        float depth;
-        
-        bar3d() {
-                width = 0.0;
-                height = 0.0;
-                depth = 0.0;
-        }
-        
+class bar3d{
+private:
+    float checkRange(float x){return (x > 0 && x < 1000)? x: 0;}
+public:
+    float width, height, depth;
 
-        bar3d(float w, float h, float d) {
-            if((w < 0.0 || w > 1000.0) || (h < 0.0 || h > 1000) || (d < 0 || d > 1000)){
-                width = 0.0;
-                height = 0.0;
-                depth = 0.0;
-            } else {
-              width = w;
-              height = h;
-              depth = d;
-            }
-        }
-        
-        float getVolume(){
-            return width * height * depth;
-        }
-        
-        void scale(float value){
-            width *= value;
-            height *= value;
-            depth *= value;
-        }
-        
-        float addVolume(bar3d b){
-            return b.getVolume() + this -> getVolume();
-        }
+    bar3d(): bar3d(0,0,0){}
+    bar3d(float w, float h, float d): width(checkRange(w)), height(checkRange(h)), depth(checkRange(d)){
+        if (width == 0 || height == 0 || depth == 0)
+            width = height = depth = 0;
+    }
+    float getVolume(){ return width * height * depth; }
 
+    void scale(float s){
+        width*=s;
+        height*=s;
+        depth*=s;
+    }
+
+    float addVolume(bar3d b){ return getVolume() + b.getVolume(); }
 };
 
 int main(int argc, char **argv)

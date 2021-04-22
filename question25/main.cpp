@@ -1,35 +1,18 @@
 #include <iostream>
 #include <algorithm>
-
 using namespace std;
 
 class Fraction
 {
 private:
-    int denominator;
-    int numerator;
+    int denominator, numerator;
 public:
-    Fraction(){
-        denominator = 0;
-        numerator = 0;
-    }
-    
-    Fraction(int numerator, int denominator){
-        this->denominator = denominator;
-        this->numerator = numerator;
-    }
-    
-    int getNumerator() const{ return numerator; }
-    
-    int getDenominator() const{ return denominator; }
-    
-    void setNumerator(int n){
-        numerator = n;
-    }
-    
-    void setDenominator(int d){
-        denominator = d;
-    }
+    Fraction(){ denominator, numerator = 0; }    
+    Fraction(int num, int den): numerator(num), denominator(den){}    
+    int getNumerator() const{ return numerator; }    
+    int getDenominator() const{ return denominator; }    
+    void setNumerator(int n){ numerator = n; }    
+    void setDenominator(int d){ denominator = d; }
     
     void display(){ 
         int numer = numerator;
@@ -42,8 +25,7 @@ public:
             denom /= cD;
             if(denom == 1){
                 cout<<'('<<numer<<')';
-            } else {
-                
+            } else {                
                 cout<<'('<<numer<<'/'<<denom<<')';
             }
         }
@@ -109,48 +91,3 @@ ostream& operator <<(ostream& outputStream, const Fraction& f){
     
     return outputStream;
 }
-
-int main(int argc, char **argv)
-{
-//    Fraction a, b, c, d, e, f;
-//
-//    a = (((b + c) - d) * e) / f;
-//    a.display();
-    
-    
-	Fraction f1(2,4);
-    Fraction f2(5,9);
-    Fraction f3(12,4);
-    Fraction f4(1,3);
-    Fraction f5(3,4);
-    Fraction f6(0,5);
-    Fraction f7(5,0);
-    
-    f1.display();
-    cout<<endl;
-    f2.display();
-    cout<<endl;
-    f3.display();
-    cout<<endl;
-    f4.display();
-    cout<<endl;  
-    f5.display();
-    cout<<endl; 
-    f6.display();
-    cout<<endl;
-    f7.display();
-    cout<<endl;
-
-    Fraction a;
-    a = ((((f1 + f2) - f3) * f4)/f5);
-    cout<<"Overloaded Fraction: ";
-    a.display();
-    cout<<a;
-    cout<<(!f1);
-    cout<<endl;
-    
-    
-	return 0;
-}
-
-

@@ -1,124 +1,47 @@
-#include <iostream>
-#include <math.h>
+#include<iostream>
+#include<math.h>
+
 using namespace std;
 
-class Point {
-private:
-    float x;
-    float y;
-    
-public: 
-    Point(): Point(0.0, 0.0){
-        
-    }
-    Point(float xCoordinate, float yCoordinate): x(xCoordinate), y(yCoordinate){
-        
-    }
-    
-    void printPoint(){
-        cout<<"("<<x<<", "<<y<<")";
-    }
-    
-    void setX(float xCoordinate){
-        x = xCoordinate;
-    }
-    
-    float getX() { return x;}
-    
-    void setY(float yCoordinate){
-        y = yCoordinate;
-    }
-    
-    float getY() { return y;}
-    
+class Point{
+    float x, y;
+public:
+    Point(): Point(0,0){};
+    Point(float x1, float y1): x{x1}, y{y1}{};
+    void printPoint(){ cout<<'('<<x<<", "<<y<<')';}
+    float getX(){ return x;}
+    float getY(){ return y;}
+    void setX(float x1){ x = x1;}
+    void setY(float y1){ y = y1;}
     float getDistance(Point p){
-        float a = p.getX() - this -> x;
-        float b = p.getY() - this -> y;
-        float square = a*a + b*b;
-        
-        return sqrt(square);
+        return sqrt(pow((x - p.getX()),2) + pow((y - p.getY()),2));
     }
-    
 };
 
 class Segment{
-private:
-    Point point1;
-    Point point2;
-    
+    Point point1, point2;
 public:
-Segment(): Segment(point1, point2){ 
-    } 
-    
-    Segment(Point p1, Point p2): point1(p1), point2(p2){        
-    } 
-    
-    float getLength(){
-        return point1.getDistance(point2);
-    }
-    
-    
-    Point *getIntersect(Segment s){ 
-        //find values of Ax + By = C (both segments) to get intersection and detrmine if it is within range of both segments
-        static Point intercect;
-        float A1 = s.point2.getY() - s.point1.getY();
-        float B1 = s.point1.getX() - s.point2.getX();
-        float C1 = A1 * s.point1.getX() + B1 * s.point1.getY();
-         
-        float A2 = this->point2.getY() - this->point1.getY();
-        float B2 = this->point1.getX() - this->point2.getX();
-        float C2 = A2 * this->point1.getX() + B2 * this->point1.getY(); 
-        
-        float denominator = A1 * B2 - A2 * B1;
-        
-        //if it is the same line or share a point on the same axis
-        if(denominator == 0){ 
-            if(s.point1.getX() == this->point1.getX() && s.point1.getY() == this->point1.getY()){
-                intercect.setX(s.point1.getX());
-                intercect.setY(s.point1.getY());
-                return &intercect;
-            }
-            if(s.point1.getX() == this->point2.getX() && s.point1.getY() == this->point2.getY()){
-                intercect.setX(s.point1.getX());
-                intercect.setY(s.point1.getY());
-                return &intercect;
-            }
-            if(s.point2.getX() == this->point1.getX() && s.point2.getY() == this->point1.getY()){
-                intercect.setX(s.point2.getX());
-                intercect.setY(s.point2.getY());
-                return &intercect;
-            }
-            if(s.point2.getX() == this->point2.getX() && s.point2.getY() == this->point2.getY()){
-                intercect.setX(s.point2.getX());
-                intercect.setY(s.point2.getY());
-                return &intercect;
-            }
+    Segment():Segment(point1, point2){}
+    Segment(Point p1, Point p2):point1(p1), point2(p2) {}
 
-            return NULL;        
-        } 
-        
-        intercect.setX((B2 * C1 - B1 * C2)/denominator);
-        intercect.setY((A1 * C2 - A2 * C1)/denominator);
-        
-        if(intercect.getX() == -0){
-            intercect.setX(0);
+    float getLength(){ return point1.getDistance(point2);}
+
+    Point *getIntersect(Segment s){
+        if((point1.getDistance(s.point1) == 0) || (point1.getDistance(s.point2) == 0)){
+           return &point1;
         }
-        if(intercect.getY() == -0){
-            intercect.setY(0);
+        if((point2.getDistance(s.point1) == 0) || (point2.getDistance(s.point2) == 0)){
+           return &point2;
         }
-        
-        //check boundary ratio  or range      
-        float ratioX1 = (intercect.getX() - s.point1.getX()) / (s.point2.getX() - s.point1.getX());
-        float ratioY1 = (intercect.getY() - s.point1.getY()) / (s.point2.getY() - s.point1.getY());
-        float ratioX2 = (intercect.getX() - this->point1.getX()) / (this->point2.getX() - this->point1.getX());
-        float ratioY2 = (intercect.getY() - this->point1.getY()) / (this->point2.getY() - this->point1.getY());
-        
-        if(((ratioX1 >= 0 && ratioX1 <= 1) || (ratioY1 >= 0 && ratioY1 <= 1)) && ((ratioX2 >= 0 && ratioX2 <= 1) || (ratioY2 >= 0 && ratioY2 <= 1))){
-            return &intercect;
-        }
-        
-        return NULL;          
-    }   
+
+        float t = -1 * (point1.getX() - s.point1.getX())/((point2.getX() - point1.getX()) - (s.point2.getX() - s.point1.getX()));
+        float x = point1.getX() + (point2.getX() - point1.getX()) * t;
+        float y = point1.getY() + (point2.getY() - point1.getY()) * t;
+
+        Point *newP = new Point(x, y);
+        return (t >= 0 && t <= 1)? newP: NULL;
+
+    }
 };
 
 
@@ -139,7 +62,6 @@ int main(int argc, char **argv)
     
     Segment seg(coordinateA, coordinateB);
     cout<<"The length of the Segment: "<<seg.getLength()<<endl;
-    cout<<"Slope: "<<seg.findSlope()<<endl;
     
     Point coordinateC = {0, 0}; //0,0
     coordinateC.printPoint();
@@ -156,7 +78,6 @@ int main(int argc, char **argv)
     
     Segment seg2(coordinateC, coordinateD);
     cout<<"The length of the Segment: "<<seg2.getLength()<<endl;
-    cout<<"Slope: "<<seg2.findSlope()<<endl;  
     
     Point *inter;
     inter = seg2.getIntersect(seg);

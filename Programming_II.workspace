@@ -26,7 +26,7 @@
   <Project Name="playground" Path="playground/playground.project" Active="No"/>
   <Project Name="question17" Path="question17/question17.project" Active="No"/>
   <Project Name="question18" Path="question18/question18.project" Active="No"/>
-  <Project Name="question19" Path="question19/question19.project" Active="No"/>
+  <Project Name="question19" Path="question19/question19.project" Active="Yes"/>
   <Project Name="operatorOverloadingExample" Path="operatorOverloadingExample/operatorOverloadingExample.project" Active="No"/>
   <Project Name="question20" Path="question20/question20.project" Active="No"/>
   <Project Name="question21" Path="question21/question21.project" Active="No"/>
@@ -38,7 +38,9 @@
   <Project Name="question27" Path="question27I/question27I.project" Active="No"/>
   <Project Name="question28" Path="question28/question28.project" Active="No"/>
   <Project Name="Justin28" Path="Justin28/Justin28.project" Active="No"/>
-  <Project Name="question29" Path="question29/question29.project" Active="Yes"/>
+  <Project Name="question29" Path="question29/question29.project" Active="No"/>
+  <Project Name="question26_shampo" Path="question26_shampo/question26_shampo.project" Active="No"/>
+  <Project Name="question19_shampo" Path="question19_shampo/question19_shampo.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -81,6 +83,8 @@
       <Project Name="question28" ConfigName="Debug"/>
       <Project Name="Justin28" ConfigName="Debug"/>
       <Project Name="question29" ConfigName="Debug"/>
+      <Project Name="question26_shampo" ConfigName="Debug"/>
+      <Project Name="question19_shampo" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -123,6 +127,8 @@
       <Project Name="question28" ConfigName="Release"/>
       <Project Name="Justin28" ConfigName="Release"/>
       <Project Name="question29" ConfigName="Release"/>
+      <Project Name="question26_shampo" ConfigName="Release"/>
+      <Project Name="question19_shampo" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

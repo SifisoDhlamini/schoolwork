@@ -3,12 +3,13 @@
 #include <stack>
 #include <queue>
 using namespace std;
-int g[40][40][4];
-int visited[40][40];
-int dx[] = {1, 0, 0,-1};//UP, left, right,DOWN
-int dy[] = {0, -1, 1,0};
+int g[40][40][4];// 3 dimensional array with 2 dimensions (x & y) and one array being the diretion(up, down, left, right)
+int visited[40][40]; // to mirror change in original array
+int dx[] = {1, 0, 0,-1};// x-axis
+int dy[] = {0, -1, 1,0};//y-axis
 int n, m;
 stack<int> X, Y;
+
 int remove() {
     if(X.empty())
         return 0;

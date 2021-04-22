@@ -1,9 +1,8 @@
 #include <iostream>
-
 using namespace std;
 
 int main() {
-    int t, x, y, i, j, test = 0;
+    int t, x, y, test = 0;
     string directions;
     cin>>t;
     while(t > 0 ) {
@@ -30,14 +29,14 @@ int main() {
             }
         }
         cout<<"Bitmap #"<<++test<<endl;
-        for(i = 31; i >= 0; i-- ) {
-            for(j = 0; j <32; j++) {
+        for(int i = 31; i >= 0; i-- ) {
+            for(int j = 0; j <32; j++) {
                 char to_print = (map[j][i] == 1)?'X':'.';
                 cout<<to_print;
             }
             cout<<endl;
         }
-        //cout<<endl;
+        cout<<endl;
         --t;
     }
     return 0;
