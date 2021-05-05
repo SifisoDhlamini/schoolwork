@@ -59,8 +59,7 @@ Segment(): Segment(point1, point2){
     
     float getLength(){
         return point1.getDistance(point2);
-    }
-    
+    }    
 };
 
 
@@ -68,7 +67,11 @@ Segment(): Segment(point1, point2){
 
 int main(int argc, char **argv)
 {
-	Point coordinateA = {6, 6};
+	
+}
+
+Point coordinateA = {-4, -3};    
+    Point coordinateA = {6, 6};
     coordinateA.printPoint();
     Point coordinateB = {2,3};
     coordinateB.printPoint();
@@ -85,4 +88,3 @@ int main(int argc, char **argv)
     cout<<"The length of the Segment: "<<seg.getLength()<<endl;
     
     return 0;
-}

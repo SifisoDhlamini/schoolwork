@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ question26_shampo - Debug ]----------"
-	@cd "question26_shampo" && "$(MAKE)" -f  "question26_shampo.mk"
+	@echo "----------Building project:[ question33 - Debug ]----------"
+	@cd "question33" && "$(MAKE)" -f  "question33.mk"
 clean:
-	@echo "----------Cleaning project:[ question26_shampo - Debug ]----------"
-	@cd "question26_shampo" && "$(MAKE)" -f  "question26_shampo.mk" clean
+	@echo "----------Cleaning project:[ question33 - Debug ]----------"
+	@cd "question33" && "$(MAKE)" -f  "question33.mk" clean
