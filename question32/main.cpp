@@ -52,7 +52,7 @@ public:
     }; 
 
     //int getEdgeCount() const{ return edgeCount;}
-    const Segment *getSegArr() const { return seg; }
+    Segment *getSegArr() { return seg; }
   
 private:
   Segment seg[10];
@@ -64,15 +64,15 @@ class Rectangle : public Shape
 public:
     Rectangle(): Shape(4){}
     Rectangle(Segment *s, int edges = 4): Shape(s, edges){}
-    float getPerimeter() const{
+    float getPerimeter(){
         Segment *s = getSegArr();
         float a = s[0].getLength();
         float b = (a != s[1].getLength())? s[1].getLength(): s[2].getLength();
         return (2 * (a + b));
     }
     
-    float getArea() const{
-    Segment *s = getSegArr();
+    float getArea(){
+        Segment *s = getSegArr();
         float a = s[0].getLength();
         float b = (a != s[1].getLength())? s[1].getLength(): s[2].getLength();        
         return (a * b);
