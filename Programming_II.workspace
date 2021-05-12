@@ -43,9 +43,12 @@
   <Project Name="question19_shampo" Path="question19_shampo/question19_shampo.project" Active="No"/>
   <Project Name="question30" Path="qustion30/qustion30.project" Active="No"/>
   <Project Name="question31" Path="question31/question31.project" Active="No"/>
-  <Project Name="question32" Path="question32/question32.project" Active="Yes"/>
+  <Project Name="question32" Path="question32/question32.project" Active="No"/>
   <Project Name="question33" Path="question33/question33.project" Active="No"/>
   <Project Name="q30_solution" Path="q30_solution/q30_solution.project" Active="No"/>
+  <Project Name="question34" Path="question34/question34.project" Active="No"/>
+  <Project Name="question35" Path="question35/question35.project" Active="No"/>
+  <Project Name="question36" Path="question36/question36.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -95,6 +98,9 @@
       <Project Name="question32" ConfigName="Debug"/>
       <Project Name="question33" ConfigName="Debug"/>
       <Project Name="q30_solution" ConfigName="Debug"/>
+      <Project Name="question34" ConfigName="Debug"/>
+      <Project Name="question35" ConfigName="Debug"/>
+      <Project Name="question36" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -144,6 +150,9 @@
       <Project Name="question32" ConfigName="Release"/>
       <Project Name="question33" ConfigName="Release"/>
       <Project Name="q30_solution" ConfigName="Release"/>
+      <Project Name="question34" ConfigName="Release"/>
+      <Project Name="question35" ConfigName="Release"/>
+      <Project Name="question36" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

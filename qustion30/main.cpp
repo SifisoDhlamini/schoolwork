@@ -5,16 +5,8 @@
 
 using namespace std;
 
-int find(vector<string> x, string l){
-    for (size_t i = 0; i < x.size(); i++){
-        if(x[i] == l){
-            return i;
-        }
-    }
-    return -1;
-}
-
-int find(vector<char> x, char l){
+template<class T1, class T2>
+int find(vector<T1> x, T2 l){
     
     for (size_t i = 0; i < x.size(); i++){
         if(x[i] == l){
