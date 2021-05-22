@@ -1,12 +1,10 @@
 #include <iostream>
-#include <cstring>
-#include <algorithm>
 #include <vector>
 
 using namespace std;
 
-template<class T1, class T2>
-int find(vector<T1> x, T2 l){
+template<class T>
+int find(vector<T> x, T l){
     
     for (size_t i = 0; i < x.size(); i++){
         if(x[i] == l){
@@ -55,13 +53,14 @@ int main()
     while (cin >> m && m != "*"){
         morscode.push_back(m);
     }
-    for(auto code: morscode){
-        string s = code;
-        int index = find(words.at(1), s);
+    for(string code: morscode){
+        //string s = code;
+        int index = find(words.at(1), code);
         if(index != -1){
             int found = 1;
             for(size_t i = index + 1; i < words.at(1).size(); i++){
-                if(words.at(1).at(i) == s){
+                if(words.at(1).at(i) == code){
+                    cout<<"Other match: "<<words.at(0).at(i)<<endl;
                     found++;
                 }
             }
@@ -71,18 +70,17 @@ int main()
                 cout<<words.at(0).at(index)<<endl;
             }
         } else {
-            //vector<string>::iterator location;
             bool found = false;
             while(!found){
                 for(size_t i = 0; i < words.at(1).size(); i++){
                     string str2 = words.at(1).at(i);
-                    if(s.length() <= str2.length() && str2.compare(0, s.size(), s) == 0){ 
+                    if(code.length() <= str2.length() && str2.compare(0, code.size(), code) == 0){ 
                         found = true; 
                         index = i;
                         break;
                     }                
                 }
-                s.pop_back();
+                code.pop_back();
             }
             cout<<words.at(0).at(index)<<'?'<<endl;
         }       

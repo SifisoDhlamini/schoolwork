@@ -38,12 +38,12 @@ public:
     Point getPoint2() {return point2;}
     
     bool getIntersect(Segment s) const{
-        if((point1.getDistance(s.point1) == 0) || (point1.getDistance(s.point2) == 0)){
-           return &point1;
-        }
-        if((point2.getDistance(s.point1) == 0) || (point2.getDistance(s.point2) == 0)){
-           return &point2;
-        }
+//        if((point1.getDistance(s.point1) == 0) || (point1.getDistance(s.point2) == 0)){
+//           continue;
+//        }
+//        if((point2.getDistance(s.point1) == 0) || (point2.getDistance(s.point2) == 0)){
+//          continue;
+//        }
 
         float t = -1 * (point1.getX() - s.point1.getX())/((point2.getX() - point1.getX()) - (s.point2.getX() - s.point1.getX()));
 
@@ -73,6 +73,7 @@ public:
         for(int i = 0; i < x; i++){
             Point p1 = s[i].getPoint1();
             Point p2 = s[i].getPoint2();
+            match = false;
             for(int j = 0; j < x; j++){
                 if(j != i){
                     if(p1.getDistance(s[j].getPoint1()) == 0 || p1.getDistance(s[j].getPoint2()) == 0 || p2.getDistance(s[j].getPoint1()) == 0 
