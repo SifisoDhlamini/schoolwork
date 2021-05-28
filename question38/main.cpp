@@ -48,7 +48,7 @@ public:
         set<int> thirtyOne = {1, 3, 5, 7, 8, 10, 12};
         
         if(month == 2){
-            lastday = (isLeapYear(*this))? 29 : 28;
+            lastday = (isLeapYear())? 29 : 28;
         } else if(thirty.find(month) != thirty.end()){
             lastday = 30;
         } else {
@@ -83,7 +83,7 @@ public:
   void addYears(int y){
       year+=y;
   }
-  static bool isLeapYear(const Date &d){ return ((d.getYear() % 4 == 0 && d.getYear() % 100 != 0) || d.getYear() % 400 == 0); }
+  bool isLeapYear(){ return ((this->getYear() % 4 == 0 && this->getYear() % 100 != 0) || this->getYear() % 400 == 0); }
 private:
   int year, month, day;
 };

@@ -48,7 +48,7 @@ public:
         set<int> thirtyOne = {1, 3, 5, 7, 8, 10, 12};
         
         if(month == 2){
-            lastday = (isLeapYear(*this))? 29 : 28;
+            lastday = (isLeapYear())? 29 : 28;
         } else if(thirty.find(month) != thirty.end()){
             lastday = 30;
         } else {
@@ -83,7 +83,7 @@ public:
   void addYears(int y){
       year+=y;
   }
-  static bool isLeapYear(const Date &d){ return ((d.getYear() % 4 == 0 && d.getYear() % 100 != 0) || d.getYear() % 400 == 0); }
+  bool isLeapYear(){ return ((this->getYear() % 4 == 0 && this->getYear() % 100 != 0) || this->getYear() % 400 == 0); }
 private:
   int year, month, day;
 };
@@ -92,23 +92,14 @@ class DateTime : public Date
 public:
   virtual string toString() // "mm/dd/yyyy HH:MM:SS"
   {
-      string d = (getDay() >= 10)? to_string(getDay()): "0" + to_string(getDay());
-      string m = (getMonth() >= 10)? to_string(getMonth()): "0" + to_string(getMonth());
-      string h = (hour >= 10)? to_string(hour): "0" + to_string(hour);
-      string min = (minute >= 10)? to_string(minute): "0" + to_string(minute);
-      string s = (second >= 10)? to_string(second): "0" + to_string(second);
-      string y;
-      if(getYear() >= 1000){
-          y = to_string(getYear());
-      } else if(getYear() >= 100){
-          y = "0" + to_string(getYear());
-      } else if(getYear() >= 10){
-          y = "00" + to_string(getYear());
-      } else {
-         y = "000" + to_string(getYear()); 
-      }
-      string dateTime =  m + "/" +d +"/" + y + " " + h + ":" + min + ":" + s;
-      return dateTime;
+    string date = Date(getYear(),getMonth(), getDay()).toString();
+    date.replace(2,2,"/");
+    date.replace(5,2,"/");        
+    string h = (hour >= 10)? to_string(hour): "0" + to_string(hour);
+    string min = (minute >= 10)? to_string(minute): "0" + to_string(minute);
+    string s = (second >= 10)? to_string(second): "0" + to_string(second);
+    string dateTime =  date + " " + h + ":" + min + ":" + s;
+    return dateTime;
   }
   DateTime() : Date()
   {
