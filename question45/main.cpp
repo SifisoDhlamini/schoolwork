@@ -1,52 +1,58 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-int main()
-{
+int main(){
+
     int n;
-    while(cin >> n && n){
-        bool arr[n][n];
-        int rowSum[n] = {0}, colSum[n] = {0};
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < n; j++){
-                cin >> arr[i][j];
-                if(arr[i][j]){
-                    rowSum[i]++;
-                    colSum[j]++;
-                }
+    cin >> n;
+    while(n!=0){
+        int matrix[n][n];
+        for(int i=0; i<n; i++){
+            for (int j=0; j<n; j++){
+                cin >> matrix[i][j];
             }
         }
-        int changeRow = -1, changeCol = -1;
-        bool printed = false;
-        for(int i = 0; i < n; i++){
-            if(rowSum[i] % 2){
-                if(changeRow != -1){
-                    cout << "Corrupt" << endl;
-                    printed = true;
-                    break;
-                }
-                changeRow = i;
+        bool parity = false;
+        int row;
+        int col;
+        int j;
+        int oddrowSum = 0;//counter for when row has odd sum
+        int oddcolSum = 0;
+        for(int i=0; i<n; i++){
+            int rowSum = 0;
+            int colSum = 0;
+            for(j=0; j<n; j++){
+                rowSum += matrix[i][j];
+                colSum += matrix[j][i];
             }
-            if(colSum[i] % 2){
-                if(changeCol != -1){
-                    cout << "Corrupt" << endl;
-                    printed = true;
-                    break;
+            if((rowSum % 2 == 0) && (colSum % 2 == 0)){
+                    parity = true;
                 }
-                changeCol = i;
+                else{
+                     parity = false;
+                     if(rowSum % 2 != 0){
+                        oddrowSum++;
+                        row = i;
+                     }
+                     if(colSum % 2 != 0){
+                        oddcolSum++;
+                        col = i;
+                     }
+                }
+            if(oddrowSum > 1 || oddcolSum > 1){
+                break;
             }
         }
-        if(!printed){
-            if((changeRow == -1 && changeCol != -1) || (changeRow != -1 && changeCol == -1)){
-                cout << "Corrupt" << endl;
-            }
-            if(changeRow != -1 && changeCol != -1){
-                cout << "Change bit (" + to_string(changeRow + 1) + "," + to_string(changeCol + 1) + ")" << endl;
-            }
-            if(changeRow == -1 && changeCol == -1){
-                cout << "OK" << endl;
-            }
+        if(parity && oddrowSum == 0 && oddcolSum == 0){
+            cout << "OK" << endl;
         }
+        else if(oddrowSum == 1 && oddcolSum == 1){
+            cout << "Change bit (" << row + 1 << "," << col + 1 << ")" << endl;
+        }
+        else{
+            cout << "Corrupt" << endl;
+        }
+        cin >> n;
     }
     return 0;
 }
