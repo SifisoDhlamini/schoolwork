@@ -37,11 +37,9 @@
   <Project Name="question26" Path="question26/question26.project" Active="No"/>
   <Project Name="question27" Path="question27I/question27I.project" Active="No"/>
   <Project Name="question28" Path="question28/question28.project" Active="No"/>
-  <Project Name="Justin28" Path="Justin28/Justin28.project" Active="No"/>
   <Project Name="question29" Path="question29/question29.project" Active="No"/>
   <Project Name="question26_shampo" Path="question26_shampo/question26_shampo.project" Active="No"/>
   <Project Name="question19_shampo" Path="question19_shampo/question19_shampo.project" Active="No"/>
-  <Project Name="question30" Path="qustion30/qustion30.project" Active="No"/>
   <Project Name="question31" Path="question31/question31.project" Active="No"/>
   <Project Name="question32" Path="question32/question32.project" Active="No"/>
   <Project Name="question33" Path="question33/question33.project" Active="No"/>
@@ -53,11 +51,17 @@
   <Project Name="question38" Path="question38/question38.project" Active="No"/>
   <Project Name="question39" Path="question39/question39.project" Active="No"/>
   <Project Name="question40" Path="question40/question40.project" Active="No"/>
-  <Project Name="question45" Path="question45/question45.project" Active="Yes"/>
+  <Project Name="question45" Path="question45/question45.project" Active="No"/>
   <Project Name="question42" Path="question42/question42.project" Active="No"/>
   <Project Name="question43" Path="question43/question43.project" Active="No"/>
   <Project Name="question44" Path="question44/question44.project" Active="No"/>
   <Project Name="FinalProject_BankingSystem" Path="FinalProject_BankingSystem/FinalProject_BankingSystem.project" Active="No"/>
+  <Project Name="question41" Path="question41/question41.project" Active="No"/>
+  <Project Name="question46" Path="question46/question46.project" Active="No"/>
+  <Project Name="question50" Path="question50/question50.project" Active="No"/>
+  <Project Name="question49" Path="question49/question49.project" Active="No"/>
+  <Project Name="question48_other" Path="question48_other/question48_other.project" Active="No"/>
+  <Project Name="question47" Path="question47/question47.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -98,7 +102,6 @@
       <Project Name="question26" ConfigName="Debug"/>
       <Project Name="question27" ConfigName="Debug"/>
       <Project Name="question28" ConfigName="Debug"/>
-      <Project Name="Justin28" ConfigName="Debug"/>
       <Project Name="question29" ConfigName="Debug"/>
       <Project Name="question26_shampo" ConfigName="Debug"/>
       <Project Name="question19_shampo" ConfigName="Debug"/>
@@ -119,6 +122,12 @@
       <Project Name="question43" ConfigName="Debug"/>
       <Project Name="question44" ConfigName="Debug"/>
       <Project Name="FinalProject_BankingSystem" ConfigName="Debug"/>
+      <Project Name="question41" ConfigName="Debug"/>
+      <Project Name="question46" ConfigName="Debug"/>
+      <Project Name="question50" ConfigName="Debug"/>
+      <Project Name="question49" ConfigName="Debug"/>
+      <Project Name="question48_other" ConfigName="Debug"/>
+      <Project Name="question47" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -159,7 +168,6 @@
       <Project Name="question26" ConfigName="Release"/>
       <Project Name="question27" ConfigName="Release"/>
       <Project Name="question28" ConfigName="Release"/>
-      <Project Name="Justin28" ConfigName="Release"/>
       <Project Name="question29" ConfigName="Release"/>
       <Project Name="question26_shampo" ConfigName="Release"/>
       <Project Name="question19_shampo" ConfigName="Release"/>
@@ -180,6 +188,12 @@
       <Project Name="question43" ConfigName="Release"/>
       <Project Name="question44" ConfigName="Release"/>
       <Project Name="FinalProject_BankingSystem" ConfigName="Release"/>
+      <Project Name="question41" ConfigName="Release"/>
+      <Project Name="question46" ConfigName="Release"/>
+      <Project Name="question50" ConfigName="Release"/>
+      <Project Name="question49" ConfigName="Release"/>
+      <Project Name="question48_other" ConfigName="Release"/>
+      <Project Name="question47" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

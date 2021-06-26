@@ -18,7 +18,7 @@ public:
     void setX(float x1){ x = x1; }
     void setY(float y1){ y = y1; }
 
-    float getDistance(Point p){
+    float getDistance(Point p){//explained in 34
         float a = p.getX() - this -> x;
         float b = p.getY() - this -> y;
         float square = a*a + b*b;
@@ -55,7 +55,7 @@ public:
             throw invalid_argument("Your segments do not form a close shape");
         }      
     }
-    bool checkShape(Segment *s, int x){ 
+    bool checkShape(Segment *s, int x){ //explained in 34
         bool match = false;
         for(int i = 0; i < x; i++){
             Point p1 = s[i].getPoint1();
@@ -99,19 +99,19 @@ class Square : public Shape
 {
 public:
     Square(Segment *seg) : Shape(seg, 4){}
-    float getArea(){ return pow(getSeg(0).getLength(), 2); }
+    float getArea(){ return pow(getSeg(0).getLength(), 2); }//area of a square as all sides are equal a*b or l^2
 };
 
 class Rectangle : public Shape
 {
 public:
     Rectangle(): Shape(4){}
-    Rectangle(Segment *s, int edges = 4): Shape(s, edges){}
+    Rectangle(Segment *s, int edges = 4): Shape(s, edges){}//use default 4 for number of sides in case not provided
     
-    float getArea(){
+    float getArea(){//are of a rectangle
         Segment *s = &getSeg(0);
         float a = s[0].getLength();
-        float b = (a != s[1].getLength())? s[1].getLength(): s[2].getLength();        
+        float b = (a != s[1].getLength())? s[1].getLength(): s[2].getLength(); //find the unequal sides and multiply them by each other       
         return (a * b);
     }    
 };

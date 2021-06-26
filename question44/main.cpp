@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-template<class T>
+template<class T>//declare template of type T
 class Set
 {
 public:
@@ -14,7 +14,7 @@ public:
             add(s.element[i]);
         }
     }
-    
+    //add whatever type T element
     T add(const T el){
         for (int i = 0 ; i < count; i++) {
           if(element[i] == el){
@@ -25,7 +25,7 @@ public:
         ++count;
         return 1;
     }
-    
+    //add whatever type T Set
     T add(const Set s){ 
         int added_elements = 0;
         for(int i = 0; i < s.count; i++){
@@ -56,7 +56,7 @@ public:
     }
     
 private:
-    T element[100];
+    T element[100];//change array to T to accomodate whatever data type
     int count;   
 };
 

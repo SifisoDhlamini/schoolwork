@@ -64,8 +64,6 @@ void account::modify()
 	cout<<"\nModify Type of Account : ";
 	cin>>type;
 	type=toupper(type);
-	cout<<"\nModify Balance amount : ";
-	cin>>deposit;
 }
 
 	
@@ -81,7 +79,7 @@ void account::draw(int x)
 	
 void account::report() const
 {
-	cout<<acno<<setw(10)<<" "<<name<<setw(10)<<" "<<type<<setw(6)<<deposit<<endl;
+	cout<<acno<<setw(10)<<" "<<name<<setw(10)<<" "<<type<<right<<setw(10)<<deposit<<endl;
 }
 	
 int account::retacno() const
@@ -216,6 +214,8 @@ void display_sp(int n)
     inFile.close();
 	if(flag==false)
 		cout<<"\n\nAccount number does not exist";
+    cout<<"\n\nPress ENTER to see menu";
+    cin.get();
 }
 
 
@@ -247,11 +247,13 @@ void modify_account(int n)
 		    File.write(reinterpret_cast<char *> (&ac), sizeof(account));
 		    cout<<"\n\n\t Record Updated";
 		    found=true;
-		  }
+        }
 	}
 	File.close();
 	if(found==false)
 		cout<<"\n\n Record Not Found ";
+    cout<<"\n\nPress ENTER to see menu";
+    cin.get();
 }
 
 //***************************************************************
@@ -284,6 +286,8 @@ void delete_account(int n)
 	remove("account.dat");
 	rename("Temp.dat","account.dat");
 	cout<<"\n\n\tRecord Deleted ..";
+    cout<<"\n\nPress ENTER to see menu";
+    cin.get();
 }
 
 //***************************************************************
@@ -301,14 +305,19 @@ void display_all()
 		return;
 	}
 	cout<<"\n\n\t\tACCOUNT HOLDER LIST\n\n";
+    cout<<"A/c no."<<setw(10)<<" "<<"NAME"<<setw(10)<<" "<<"Type"<<right<<setw(10)<<"Balance\n"<<endl;
 	cout<<"====================================================\n";
-	cout<<"A/c no.      NAME           Type  Balance\n";
-	cout<<"====================================================\n";
+    int count = 0;
 	while(inFile.read(reinterpret_cast<char *> (&ac), sizeof(account)))
 	{
 		ac.report();
+        count++;
 	}
 	inFile.close();
+    cout<<"====================================================\n";
+    cout<<count<<" record(s) found"<<endl;
+    cout<<"\n\nPress ENTER to see menu";
+    cin.get();
 }
 
 //***************************************************************
@@ -336,18 +345,18 @@ void deposit_withdraw(int n, int option)
 			if(option==1)
 			{
 				cout<<"\n\n\tTO DEPOSITE AMOUNT ";
-				cout<<"\n\nEnter The amount to be deposited";
+				cout<<"\n\nEnter The amount to be deposited: ";
 				cin>>amt;
 				ac.dep(amt);
 			}
 		    if(option==2)
 			{
 				cout<<"\n\n\tTO WITHDRAW AMOUNT ";
-				cout<<"\n\nEnter The amount to be withdraw";
+				cout<<"\n\nEnter The amount to be withdraw: ";
 				cin>>amt;
 				int bal=ac.retdeposit()-amt;
 				if((bal<500 && ac.rettype()=='S') || (bal<1000 && ac.rettype()=='C'))
-					cout<<"Insufficience balance";
+					cout<<"Insufficient balance";
 				else
 					ac.draw(amt);
 		      }
@@ -361,6 +370,8 @@ void deposit_withdraw(int n, int option)
     File.close();
 	if(found==false)
 		cout<<"\n\n Record Not Found ";
+    cout<<"\n\nPress ENTER to see menu";
+    cin.get();
 }
 
 
@@ -376,9 +387,13 @@ void intro()
 	cout<<"\n\n\n\nMADE BY : Sifiso Lucolo Dhlamini";
 	cout<<"\n\nSCHOOL : National Dong Hwa University";
     cout<<"\n\nSTUDENT ID : 410921334";
+    cout<<"\n\nPress ENTER to see menu";
 	cin.get();
 }
 
 //***************************************************************
 //    			END OF PROJECT
 //***************************************************************
+
+	//cout<<"====================================================\n";
+	//cout<<"A/c no.      NAME           Type  Balance\n";

@@ -1,14 +1,16 @@
 #include <iostream>
 using namespace std;
-
+//template of any type T
 template<typename T>
-T *sort(T *array, int n)
+T *sort(T *array, int n)//sort array of type T and its size as an int
 {
-   T *arr2 = new T[n];
+    //create a pointer that points to a new allocated memory of type T array and size n
+   T *arr2 = new T[n]; 
+   //copy values from original array
     for(int i = 0; i < n; i++){        
         arr2[i] = array[i];
     }
-    
+    //sort new array on heap
     for(int i = 0; i < n - 1; i++){        
         for(int j = i + 1; j < n; j++){
             T temp;
@@ -19,7 +21,7 @@ T *sort(T *array, int n)
             }
         }
     }
-    
+    //return adress of new sorted array
     return arr2;
 }
 

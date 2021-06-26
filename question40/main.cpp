@@ -210,9 +210,11 @@ public:
                 date_time->setDay(date_time->getDay()+ daysToAdd);
                 sd->addDays(daysToAdd); 
             } else if(getMonth() >= sd->getMonth()){
+               // while(getMonth() > sd->getMonth()){
                    int daysToAdd = sd->getLastDay(); 
                     sd->addDays(daysToAdd);
                     date_time->setDay(date_time->getDay() + daysToAdd);
+               // }
             }                           
         }
         
@@ -232,11 +234,9 @@ public:
            int daysToAdd = getDay() - sd->getDay();
            sd->addDays(daysToAdd);
            date_time->setDay(date_time->getDay() + daysToAdd);
-           cout<<sd->toString()<<endl;
        } 
       
        if(sd->getHour() != getHour()){
-           cout<<sd->toString()<<endl;
            int hoursToAdd = getHour() - sd->getHour();
            sd->addHours(hoursToAdd);
            date_time->setHour(date_time->getHour() + hoursToAdd);
@@ -244,31 +244,28 @@ public:
                date_time->setDay(date_time->getDay() - 1);
                date_time->setHour(date_time->getHour() + 24);
             } 
-           cout<<sd->toString()<<endl;
        }        
        
        if(sd->getMinute() != getMinute()){
-           cout<<sd->toString()<<endl;
            int minutesToAdd = getMinute() - sd->getMinute();
+           //if(minutesToAdd  + getMinute() > 0) date_time->setHour(date_time->getHour() - 1);
            sd->addMinutes(minutesToAdd);
            date_time->setMinute(date_time->getMinute() + minutesToAdd);
            if(minutesToAdd + getMinute() < 0){
                date_time->setHour(date_time->getHour() - 1);
                date_time->setMinute(date_time->getMinute() + 60);
             } 
-           cout<<sd->toString()<<endl;
        }
        
        if(sd->getSecond() != getSecond()){
-           cout<<sd->toString() <<endl;
            int secondsToAdd = getSecond() - sd->getSecond();
+            //if(secondsToAdd + getSecond() > 0) date_time->setMinute(date_time->getMinute() -1);
            sd->addSeconds(secondsToAdd);
            date_time->setSecond(date_time->getSecond() + secondsToAdd);
            if(secondsToAdd + getSecond() < 0){
                date_time->setMinute(date_time->getMinute() - 1);
                date_time->setSecond(date_time->getSecond() + 60);
             } 
-           cout<<sd->toString()<<endl;
        }       
                
     }
@@ -285,9 +282,6 @@ int main() {
   DateTime d1(y, m, d, hh, mm, ss);
   cin>>y>>m>>d>>hh>>mm>>ss;
   DateTime d2(y, m, d, hh, mm, ss);
-  cout<<(d1 - d2).toTotalSeconds()<<endl;
-  cout<<(d1 - d2).toTotalMinutes()<<endl;
-  cout<<(d1 - d2).toTotalHours()<<endl;
-  cout<<(d1 - d2).toTotalDays()<<endl;
+  cout<<(d1 - d2).toTotalSeconds();
   return 0;
 }

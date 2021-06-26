@@ -9,7 +9,7 @@ public:
     Point(): x(0), y(0){}
     Point(float x1, float y1): x(x1), y(y1){}
 
-    void printPoint(){
+    void printPoint(){// pint points of segment
         cout<<"("<<x<<", "<<y<<")";
     }
 
@@ -18,7 +18,7 @@ public:
     void setX(float x1){ x = x1; }
     void setY(float y1){ y = y1; }
 
-    float getDistance(Point p){
+    float getDistance(Point p){//get distance between 2 points using distance formula
         float a = p.getX() - this -> x;
         float b = p.getY() - this -> y;
         float square = a*a + b*b;
@@ -65,31 +65,32 @@ class Triangle : public Shape
 {
 public:
     Triangle(): Shape(3){}
-    Triangle(Segment *s, int edges = 3): Shape(s, edges){}
+    Triangle(Segment *s, int edges = 3): Shape(s, edges){}//use default 3 for number of edges in case not specified
     float getPerimeter(){
-        Segment *s = getSegArr();
+        Segment *s = getSegArr();//point to first element of Array seg[] in Shape Class
         float p{};
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i < 3; i++){//add all sides
             p += s[i].getLength();
         }
         
         return p;
     }
-    
+    //Get area of triangle
     float getArea(){
-        Segment *s = getSegArr();
+        Segment *s = getSegArr();// point to first element of array of segments
         Point p1;
         Point p2;
         Point p3;
-        if(s[0].getPoint1().getDistance(s[1].getPoint1()) == 0){
+        if(s[0].getPoint1().getDistance(s[1].getPoint1()) == 0){//if point1 of segment 0 and segment 1 are the same
             p1 = s[0].getPoint1();
             p2 = s[0].getPoint2();
             p3 = s[1].getPoint2();
-        } else {
+        } else {// then it must be the other point because they segments share a point
             p1 = s[0].getPoint2();
             p2 = s[0].getPoint1();
             p3 = s[1].getPoint2();
         }
+        //use formula (x1 * (y2 - y3)) + (x2 * (y3 - y1)) + (x3 *(y1 -y2))) to get area
         return ((p1.getX() * (p2.getY() - p3.getY())) + (p2.getX() * (p3.getY() - p1.getY())) + (p3.getX() * (p1.getY() - p2.getY())))/2;
     }    
 };

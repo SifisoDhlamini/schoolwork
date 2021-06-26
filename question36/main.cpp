@@ -37,13 +37,7 @@ public:
     Point getPoint1() {return point1;}
     Point getPoint2() {return point2;}
     
-    bool getIntersect(Segment s) const{
-//        if((point1.getDistance(s.point1) == 0) || (point1.getDistance(s.point2) == 0)){
-//           continue;
-//        }
-//        if((point2.getDistance(s.point1) == 0) || (point2.getDistance(s.point2) == 0)){
-//          continue;
-//        }
+    bool getIntersect(Segment s) const{//same intersect formula used in Segment exercise, but returns boolean
 
         float t = -1 * (point1.getX() - s.point1.getX())/((point2.getX() - point1.getX()) - (s.point2.getX() - s.point1.getX()));
 
@@ -129,7 +123,7 @@ public:
     bool isCollision(const Rectangle &r){
         int sides = 4; 
         for(int i = 0; i < sides; i++){
-            for(int j = 0; j < sides; j++){
+            for(int j = 0; j < sides; j++){//check if any of the sides colide by checking if there is an intersect
                 if(r.getSeg(i).getIntersect(this->getSeg(j)))  return true;
             }            
         }        

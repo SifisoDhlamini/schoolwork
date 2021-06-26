@@ -18,7 +18,7 @@ public:
     void setX(float x1){ x = x1; }
     void setY(float y1){ y = y1; }
 
-    float getDistance(Point p){
+    float getDistance(Point p){//get distance between 2 points using distance formula
         float a = p.getX() - this -> x;
         float b = p.getY() - this -> y;
         float square = a*a + b*b;
@@ -58,12 +58,13 @@ public:
     bool checkShape(Segment *s, int x){ 
         bool match = false;
         for(int i = 0; i < x; i++){
+            //check if segments share a point with other segments to form a closed shape  
             Point p1 = s[i].getPoint1();
             Point p2 = s[i].getPoint2();
             for(int j = 0; j < x; j++){
                 if(j != i){
                     if(p1.getDistance(s[j].getPoint1()) == 0 || p1.getDistance(s[j].getPoint2()) == 0 || p2.getDistance(s[j].getPoint1()) == 0 
-                    || p2.getDistance(s[j].getPoint2()) == 0 ){
+                    || p2.getDistance(s[j].getPoint2()) == 0 ){//check if the points of the segments are the same
                        match = true; 
                     }
                         
@@ -76,7 +77,7 @@ public:
     
     virtual float getArea() = 0;
     
-    float getPerimeter(){
+    float getPerimeter(){//just add all sides
         float p{};
         for(int i = 0; i < edgeCount; i++){
             p += seg[i].getLength();
